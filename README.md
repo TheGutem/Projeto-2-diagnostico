@@ -1,0 +1,1 @@
+- Projeto inicial proposto pelo professor Luiz Araújo (IFBA Jacobina) para diagnóstico, avaliação e, ainda neste ano, introdução e aplicação dos primeiros padrões de projetos.
