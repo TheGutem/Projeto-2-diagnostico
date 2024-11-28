@@ -53,7 +53,7 @@ public class main {
 
         // Criar Estudantes
         List<estudante> estudantes = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.print("\nDigite o nome do estudante " + (i + 1) + ": ");
             String nome = scanner.nextLine();
             System.out.print("Digite o CPF do estudante: ");
