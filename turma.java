@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Projeto;
+package Projeto2;
 
 /**
  *
@@ -11,25 +11,65 @@ package Projeto;
 import java.util.ArrayList;
 import java.util.List;
 
-class turma {
-    String identificacao;
-    curso curso;
-    int semestre;
-    professor professor;
-    List<estudante> estudantes = new ArrayList<>();
+public class turma implements printable {
+    private List<estudante> estudantes;
+    private professor professor;
+    private List<String> logs;
 
-    turma(String identificacao) {
-        this.identificacao = identificacao;
+    public turma(professor professor) {
+        this.professor = professor;
+        this.estudantes = new ArrayList<>();
+        this.logs = new ArrayList<>();
     }
 
-    void addEstudante(estudante estudante) {
+    public void adicionarEstudante(estudante estudante) {
         estudantes.add(estudante);
+        logs.add("Adicionado aluno: " + estudante.getNome());
     }
 
-    void exibirEstudantesEProfessores() {
-        System.out.println("\nTurma: " + identificacao);
-        if (professor != null) professor.printDetails();
-        for (estudante estudante : estudantes) estudante.printDetails();
+    public List<estudante> getEstudantes() {
+        return estudantes;
+    }
+
+    public professor getProfessor() {
+        return professor;
+    }
+
+    public void imprimir() {
+        System.out.println("Turma com Professor: " + professor.getNome());
+        for (estudante estudante : estudantes) {
+            System.out.println(estudante);
+        }
+    }
+
+    public void gerarRelatorio() {
+        int aprovados = 0, recuperacao = 0, reprovados = 0;
+        List<String> recuperacaoList = new ArrayList<>();
+        List<String> reprovadosList = new ArrayList<>();
+        
+        for (estudante estudante : estudantes) {
+            double media = estudante.calcularMedia();
+            if (media >= 7) {
+                aprovados++;
+            } else if (media < 2.5) {
+                reprovados++;
+                reprovadosList.add(estudante.getNome());
+            } else {
+                recuperacao++;
+                recuperacaoList.add(estudante.getNome());
+            }
+        }
+        
+        System.out.println("Relatório: ");
+        System.out.println("Aprovados: " + aprovados);
+        System.out.println("Recuperação: " + recuperacao);
+        System.out.println("Reprovados: " + reprovados);
+        System.out.println("Estudantes em recuperação: " + recuperacaoList);
+        System.out.println("Estudantes reprovados: " + reprovadosList);
+    }
+
+    public List<String> getLogs() {
+        return logs;
     }
 }
 
