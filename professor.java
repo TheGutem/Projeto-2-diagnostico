@@ -2,21 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Projeto;
+package Projeto2;
 
 /**
  *
  * @author Gutem
  */
-class professor extends pessoa {
-    int siape;
+public class professor extends pessoa {
+    private String siape;
 
-    professor(String nome, String cpf, String endereco, String telefone, int siape) {
-        super(nome, cpf, endereco, telefone);
+    public professor(String nome, String endereco, String telefone, String cpf, String siape) {
+        super(nome, endereco, telefone, cpf);
         this.siape = siape;
     }
 
-    public void printDetails() {
-        System.out.println("Professor " + nome + " - CPF: " + cpf + " - SIAPE: " + siape);
+    public String getSiape() {
+        return siape;
+    }
+
+    public String toString() {
+        return super.toString() + ", SIAPE: " + siape;
     }
 }
+

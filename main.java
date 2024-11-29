@@ -25,6 +25,7 @@ public class main {
         String cpfProfessor = sc.nextLine();
         System.out.print("Digite o SIAPE do professor: ");
         String siape = sc.nextLine();
+        System.out.println("\n");
         
         professor professor = new professor(nomeProfessor, enderecoProfessor, telefoneProfessor, cpfProfessor, siape);
         
@@ -44,6 +45,7 @@ public class main {
             String cpfEstudante = sc.nextLine();
             System.out.print("Número de matrícula: ");
             String matriculaEstudante = sc.nextLine();
+            System.out.println("\n");
             
             estudante estudante = new estudante(nomeEstudante, enderecoEstudante, telefoneEstudante, cpfEstudante, matriculaEstudante);
             
@@ -53,7 +55,9 @@ public class main {
             double nota2 = sc.nextDouble();
             System.out.print("Nota 3: ");
             double nota3 = sc.nextDouble();
-            sc.nextLine(); // Consumir a quebra de linha
+            sc.nextLine();
+            System.out.println("\n");
+            
             
             estudante.getNotas().setNotas(nota1, nota2, nota3);
             turma.adicionarEstudante(estudante);
@@ -66,7 +70,7 @@ public class main {
         turma.imprimir();
         
         // Informações do curso
-        curso curso = new curso("Curso de Programação", turma, professor);
+        curso curso = new curso("Curso de Programação OO2", turma, professor);
         curso.imprimirInformacoes();
         
         sc.close();

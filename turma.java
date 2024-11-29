@@ -66,6 +66,7 @@ public class turma implements printable {
         System.out.println("Reprovados: " + reprovados);
         System.out.println("Estudantes em recuperação: " + recuperacaoList);
         System.out.println("Estudantes reprovados: " + reprovadosList);
+        System.out.println("\n");
     }
 
     public List<String> getLogs() {

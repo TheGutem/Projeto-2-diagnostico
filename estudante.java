@@ -2,76 +2,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Projeto;
+package Projeto2;
 
 /**
  *
  * @author Gutem
  */
-import java.util.ArrayList;
-import java.util.List;
+public class estudante extends pessoa {
+    private String numeroMatricula;
+    private notas notas;
 
-class estudante extends pessoa {
-    String matricula;
-    curso curso;
-    private List<notas> notas;     
-
-    public String getMatricula() {
-        return matricula;
+    public estudante(String nome, String endereco, String telefone, String cpf, String numeroMatricula) {
+        super(nome, endereco, telefone, cpf);
+        this.numeroMatricula = numeroMatricula;
+        this.notas = new notas();
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public String getNumeroMatricula() {
+        return numeroMatricula;
     }
 
-    public curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(curso curso) {
-        this.curso = curso;
-    }
-
-    public List<notas> getNotas() {
+    public notas getNotas() {
         return notas;
     }
 
-    public void setNotas(List<notas
-            > notas) {
-        this.notas = notas;
+    public double calcularMedia() {
+        return (notas.getNota1() + notas.getNota2() + notas.getNota3()) / 3;
     }
 
-    estudante(String nome, String cpf, String endereco, String telefone, String matricula, curso curso) {
-        super(nome, cpf, endereco, telefone);
-        this.matricula = matricula;
-        this.curso = curso;
-    }
-    
-    public void exibirDados(){
-        for (notas n : notas) {
-            System.out.println(getNome() + " - Cpf: " + getCpf() + " - End. " + getEndereco() + " - Tel.: " + getTelefone() + ". Matricula: " + matricula);
-            n.exibirDados();
-        }
-    }
-
-    public void printDetails() {
-        System.out.println("Estudante " + nome + " - CPF: " + cpf + " - Matrícula: " + matricula);
-    }
-
-    private String getNome() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private String getCpf() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private String getEndereco() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private String getTelefone() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String toString() {
+        return super.toString() + ", Matricula: " + numeroMatricula + ", Média: " + calcularMedia();
     }
 }
 

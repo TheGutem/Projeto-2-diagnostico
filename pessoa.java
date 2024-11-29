@@ -2,20 +2,44 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Projeto;
+package Projeto2;
 
 /**
  *
  * @author Gutem
  */
-abstract class pessoa implements printable {
-    String nome, cpf, endereco, telefone;
+public class pessoa {
+    private String nome;
+    private String endereco;
+    private String telefone;
+    private String cpf;
 
-    pessoa(String nome, String cpf, String endereco, String telefone) {
+    public pessoa(String nome, String endereco, String telefone, String cpf) {
         this.nome = nome;
-        this.cpf = cpf;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    @Override
+    public String toString() {
+        return nome + ", " + endereco + ", " + telefone + ", " + cpf;
     }
 }
 
