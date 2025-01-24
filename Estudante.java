@@ -16,6 +16,7 @@ public class Estudante extends Pessoa {
         super(nome, endereco, telefone, cpf);
         this.numeroMatricula = numeroMatricula;
         this.notas = new Notas();
+        Logger.log("Estudante criado: " + nome + ", Matrícula: " + numeroMatricula);
     }
 
     public String getNumeroMatricula() {
@@ -27,11 +28,12 @@ public class Estudante extends Pessoa {
     }
 
     public double calcularMedia() {
-        return (notas.getNota1() + notas.getNota2() + notas.getNota3()) / 3;
+        double media = (notas.getNota1() + notas.getNota2() + notas.getNota3()) / 3;
+        Logger.log("Média calculada para " + getNome() + ": " + media);
+        return media;
     }
 
     public String toString() {
-        return super.toString() + ", Matricula: " + numeroMatricula + ", Média: " + calcularMedia();
+        return super.toString() + ", Matricula: " + numeroMatricula + ", Media: " + calcularMedia();
     }
 }
-

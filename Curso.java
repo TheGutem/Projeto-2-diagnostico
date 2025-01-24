@@ -17,6 +17,7 @@ public class Curso {
         this.nome = nome;
         this.turma = turma;
         this.coordenador = coordenador;
+        Logger.log("Curso criado: " + nome + ", Coordenador: " + coordenador.getNome());
     }
 
     public void imprimirInformacoes() {
@@ -27,6 +28,8 @@ public class Curso {
 
     public void vincularCoordenador(Professor coordenador) {
         this.coordenador = coordenador;
+        Logger.log("Coordenador vinculado ao curso: " + coordenador.getNome());
     }
 }
+
 

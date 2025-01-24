@@ -54,17 +54,17 @@ public class Turma implements Printable {
             } else if (media < 2.5) {
                 reprovados++;
                 reprovadosList.add(estudante.getNome());
-            } else {
+            } else if (media >2.5 && media < 7){
                 recuperacao++;
                 recuperacaoList.add(estudante.getNome());
             }
         }
         
-        System.out.println("Relatório: ");
+        System.out.println("Relatorio: ");
         System.out.println("Aprovados: " + aprovados);
-        System.out.println("Recuperação: " + recuperacao);
+        System.out.println("Recuperacao: " + recuperacao);
         System.out.println("Reprovados: " + reprovados);
-        System.out.println("Estudantes em recuperação: " + recuperacaoList);
+        System.out.println("Estudantes em recuperacao: " + recuperacaoList);
         System.out.println("Estudantes reprovados: " + reprovadosList);
         System.out.println("\n");
     }

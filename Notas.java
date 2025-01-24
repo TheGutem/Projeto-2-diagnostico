@@ -19,6 +19,7 @@ public class Notas {
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
+        Logger.log("Notas atualizadas: " + nota1 + ", " + nota2 + ", " + nota3);
     }
 
     public double getNota1() {
@@ -33,4 +34,3 @@ public class Notas {
         return nota3;
     }
 }
-

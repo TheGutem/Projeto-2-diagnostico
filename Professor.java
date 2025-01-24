@@ -14,6 +14,7 @@ public class Professor extends Pessoa {
     public Professor(String nome, String endereco, String telefone, String cpf, String siape) {
         super(nome, endereco, telefone, cpf);
         this.siape = siape;
+        Logger.log("Professor criado: " + nome + ", SIAPE: " + siape);
     }
 
     public String getSiape() {
