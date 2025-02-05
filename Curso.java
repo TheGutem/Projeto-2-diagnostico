@@ -23,7 +23,7 @@ public class Curso {
     public void imprimirInformacoes() {
         System.out.println("Curso: " + nome);
         System.out.println("Coordenador: " + coordenador);
-        turma.imprimir();
+        //turma.imprimir();
     }
 
     public void vincularCoordenador(Professor coordenador) {
